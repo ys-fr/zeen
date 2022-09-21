@@ -13,7 +13,7 @@ $$
 \begin{align*}
 L(\tau) :&=\langle r(t) \sigma(t+\tau)\rangle\\
          &= \frac{1}{T}\sum_{t}r(t)\sigma(t+\tau)\\
-         &\propto 1-e^{-\tau/\bar{\tau}}.
+         &\propto -e^{-\tau/\bar{\tau}}.
 \end{align*}
 $$
 
