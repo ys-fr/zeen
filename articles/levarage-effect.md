@@ -26,15 +26,15 @@ End = DateTime(2020,1,1)
 data = values(yahoo(:VZ, YahooOpt(period1 = Start,period2 = End)).Close)
 #特徴量の計算
 r = diff(log.(data))
-σ =r.^2
+σ = r.^2
 #L(τ)の計算
 save = zeros(Float64,200)
 x = collect(1:200)
 for i in x
-    save[i] = mean((r[1:end-i]) .* (dr[i+1:end]) )
+    save[i] = mean((r[1:end-i]) .* (σ[i+1:end]) )
 end
 #無次元化する
-save = save./mean(dr)^2
+save = save./mean(σ)^2
 ```
 
 ![](/images/levarage_f.png)
